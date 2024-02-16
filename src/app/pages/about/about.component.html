@@ -1,9 +1,6 @@
 <section id="about" class="pt-36 flex-col">
     <div class="container flex flex-col gap-5 p-5 mx-auto">
-        <div class="text-center pb-10">
-            <p class="text-xl tracking-widest pb-5">SOBRE</p>
-            <h1 class="font-bold text-2xl">Vou contar um pouco sobre meu trabalho</h1>
-        </div>
+        <app-top-title [primaryTitle]="'SOBRE'" [secondaryTitle]="'Vou contar um pouco sobre meu trabalho'"/>
         <div class="flex justify-center flex-col sm:flex-row items-center gap-5">
             <img ngSrc="assets/profile.png" width="100" height="100" class="rounded-full w-36 h-36 object-cover shadow-2xl" />
             <p class="max-w-xl text-justify p-5">
