@@ -15,45 +15,18 @@
         <hr class="my-7">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 p-5 max-w-5xl mx-auto">
             <div class="flex flex-col gap-3">
-                <div>
-                    <p class="font-bold">PERFIL</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto</p>
-                </div>
-                <div>
-                    <p class="font-bold">NOME</p>
-                    <p>Hállan Neves</p>
-                </div>
-                <div>
-                    <p class="font-bold">NASCIMENTO</p>
-                    <p>10/08/2001</p>
-                </div>
-                <div>
-                    <p class="font-bold">CARGO</p>
-                    <p>Desenvolvedor Full-Stack</p>
-                </div>
+                <app-about-item [labelItem]="'PERFIL'" [contentItem]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto'" />
+                <app-about-item [labelItem]="'NOME'" [contentItem]="'Hállan Neves'" />
+                <app-about-item [labelItem]="'NASCIMENTO'" [contentItem]="'10/08/2001'" />
+                <app-about-item [labelItem]="'CARGO'" [contentItem]="'Desenvolvedor Full-Stack'" />
                 <hr class="my-4 block sm:hidden">
             </div>
             <div class="flex flex-col gap-4">
-                <div>
-                    <p class="font-bold">SKILLS</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto</p>
-                </div>
-                <div>
-                    <p class="font-bold">FRONT-END</p>
-                    <mat-progress-bar mode="determinate" value="87"></mat-progress-bar>
-                </div>
-                <div>
-                    <p class="font-bold">BACK-END</p>
-                    <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
-                </div>
-                <div>
-                    <p class="font-bold">DESIGN GRÁGICO</p>
-                    <mat-progress-bar mode="determinate" value="79"></mat-progress-bar>
-                </div>
-                <div>
-                    <p class="font-bold">UI /UX</p>
-                    <mat-progress-bar mode="determinate" value="84"></mat-progress-bar>
-                </div>
+                <app-about-item [labelItem]="'SKILLS'" [contentItem]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto'" />
+                <app-about-item [labelItem]="'FRONT-END'" [value]="87" />
+                <app-about-item [labelItem]="'BACK-END'" [value]="90" />
+                <app-about-item [labelItem]="'DESIGN GRÁGICO'" [value]="79" />
+                <app-about-item [labelItem]="'UI / UX'" [value]="84" />
             </div>
             <div class="col-span-1 sm:col-span-2 flex gap-5 pt-14 px-1">
                 <a target="_blank" href="https://drive.google.com/file/d/1YE1Ns71L5XJXFUyTB8mGaQY9BJX-AStx/view?usp=drive_link" class="w-full tracking-widest" mat-raised-button color="primary">BAIXAR

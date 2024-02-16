@@ -1,0 +1,8 @@
+<div>
+    <p class="font-bold">{{ labelItem }}</p>
+    @if (value > 0) {
+        <mat-progress-bar mode="determinate" [value]="value"></mat-progress-bar>
+    }@else {
+        <p>{{ contentItem }}</p>
+    }
+</div>
