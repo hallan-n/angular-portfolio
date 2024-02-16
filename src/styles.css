@@ -7,9 +7,41 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html { scroll-behavior: smooth; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.primary{
+    background-color: #4758B8;
+    border-color: #4758B8;
+}
+
+.t-primary{
+    color: #4758B8;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4758B8;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #4758B8;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4758B8;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #22294d;
+}

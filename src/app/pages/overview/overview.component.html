@@ -1,29 +1,68 @@
-<section id="overview" class="bg-zinc-300 mt-32">
+<section id="overview" class="bg-zinc-200 mt-32">
     <div class="pt-36 container mx-auto">
-        <app-top-title [primaryTitle]="'RESUMO'" [secondaryTitle]="'Vou contar um pouco sobre meu trabalho'"/>
-        <app-timeline [current]="true"
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+        <app-top-title [primaryTitle]="'RESUMO'" [secondaryTitle]="'Minhas qualificações'"/>
+        <h1 class="text-center text-2xl pb-10 font-bold t-primary">Educação</h1>
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [icon]="'school'"
+            [office]="'Análise e Desenvolvimento de Sistemas'"
+            [start]="'03/2022'"
+            [current]="true"
+            [company]="'Universidade SENAC'"
+            [description]="'Desenvolve, analisa, projeta, implementa e atualiza sistemas de informação. Tem noções de gerenciamento, mas sua especialidade é a criação de sistemas informatizados: programação de computadores e desenvolvimento de softwares para ampliar a capacidade dos recursos do equipamento'" />
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [icon]="'school'"
+            [office]="'Técnico de Informática'"
+            [start]="'09/2021'"
+            [end]="'09/2023'"
+            [company]="'SENAC Vitória'"
+            [description]="'Durante o curso adquiri habilidades em linguagens como C, Java e Python, programação orientada a objetos em Java, desenvolvimento web com HTML5, CSS3 e Javascript (como JQuery e Bootstrap 5), além de experiência em desenvolvimento mobile para Android com Java. Também explorei o desenvolvimento desktop com Java/Swing e Java/FX, utilizei MySQL para gerenciamento de banco de dados e aprendi os fundamentos de hardware, redes e inglês técnico, preparando-me para enfrentar desafios variados no mercado de TI.'" />
+            
+            <h1 class="text-center text-2xl py-10 font-bold t-primary">Experiência Profissional</h1>
+            
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [office]="'Designer Gráfico'"
+            [start]="'05/2017'"
+            [end]="'11/2018'"
+            [company]="'Arte Impressa Comunicação Visual'"
+            [description]="'Atendimento ao cliente, criação de arte para social media, design gráfico para redes sociais e criação de arte para impressão.'" />
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [office]="'Designer Gráfico'"
+            [start]="'01/2019'"
+            [end]="'03/2019'"
+            [company]="'Deslimites Design Gráfico'"
+            [description]="'Criação de arte para social media, design gráfico para redes sociais, criação de arte para impressão, apresentações e comunicação visual em geral, definição de aparência, cores, formatos, tamanhos e tipografias em projetos de identidade visual.'" />
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [office]="'Designer Gráfico'"
+            [start]="'05/2019'"
+            [end]="'04/2020'"
+            [company]="'Arte Impressa Comunicação Visual'"
+            [description]="'Atendimento ao cliente, criação de arte para social media, design gráfico para redes sociais e criação de arte para impressão.'" />
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [office]="'Designer Gráfico'"
+            [start]="'05/2019'"
+            [end]="'04/2020'"
+            [company]="'Graph Art Comunicação visual'"
+            [description]="'Atendimento ao cliente, Criação de arte para social media e design gráfico para redes sociais, Criação de arte para impressão.'" />
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [icon]="'auto_stories'"
+            [office]="'Instrutor de informática'"
+            [start]="'12/2021'"
+            [end]="'02/2022'"
+            [company]="'Microlins'"
+            [description]="'Atuei como instrutor de informática, auxiliando os alunos no aprendizado nas principais ferramentas de informática: Word, Excel, PowerPoint, Photoshop, Illustrator, CorelDraw, HTML5, CSS3, entre outros.'" />
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [icon]="'support_agent'"
+            [office]="'Técnico de Suporte N1'"
+            [start]="'10/2022'"
+            [end]="'05/2023'"
+            [company]="'Mindworks'"
+            [description]="'Atendimento ao cliente, Criação de arte para social media e design gráfico para redes sociais, Criação de arte para impressão.'" />
         <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
-        <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
-        <app-timeline
-            [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem repudiandae, repellendus accusamus assumenda molestias numquam recusandae cupiditate fugiat minima voluptatibus exercitationem sed nihil tempore eaque autem? Debitis, temporibus cupiditate.'"></app-timeline>
+            [icon]="'code'"
+            [office]="'Desenvolvedor de software'"
+            [start]="'05/2023'"
+            [current]="true"
+            [company]="'TEx Tecnologia'"
+            [description]="'Responsável por analisar, projetar e implementar soluções eficazes para os desafios apresentados, garantindo uma abordagem sistemática e proativa na resolução de problemas. Além disso, colaboro estreitamente com as equipes de desenvolvimento para coletar requisitos e garantir a entrega de software de alta qualidade e alto desempenho, atuando como ponto focal na identificação e solução de questões técnicas.'" />
     </div>
 </section>

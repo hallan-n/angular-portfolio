@@ -1,7 +1,7 @@
-<div class="flex justify-center gap-3 max-w-5xl mx-auto px-5">
+<div class="flex justify-center gap-6 max-w-5xl mx-auto px-5">
     <div class="hidden sm:block min-w-32">
-        <h1 class="font-bold">{{ office }}</h1>
-        <small>
+        <h1 class="font-bold max-w-32 text-end t-primary">{{ office }}</h1>
+        <small class="float-end mt-1">
             {{ start }} -
             @if (current) {
             Atual
@@ -11,16 +11,14 @@
         </small>
     </div>
     <div class="flex flex-col justify-center items-center">
-        <!-- <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon"> -->
-        <!-- </button> -->
-        <div mat-mini-fab class="flex items-center justify-center bg-black min-h-11 h-11 min-w-11 w-11 rounded-full">
+        <div mat-mini-fab class="flex items-center justify-center primary min-h-11 h-11 min-w-11 w-11 rounded-full">
             <mat-icon class="text-white">{{ icon }}</mat-icon>
         </div>
-        <div class="bg-black h-full w-1"></div>
+        <div class="primary h-full w-px opacity-15"></div>
     </div>
     <div>
         <div class="block sm:hidden">
-            <h1 class="font-bold">{{ office }}</h1>
+            <h1 class="font-bold t-primary">{{ office }}</h1>
             <small>
                 {{ start }} -
                 @if (current) {
@@ -31,8 +29,8 @@
             </small>
         </div>
         <h1>{{ company }}</h1>
-        <hr class="border-2 border-zinc-600 rounded-full mt-2 w-20">
-        <p class="mt-4 mb-9">{{ description }}
+        <hr class="border-2 primary rounded-full mt-2 w-20">
+        <p class="mt-4 mb-9 text-justify pe-2">{{ description }}
         <p>
     </div>
 </div>
