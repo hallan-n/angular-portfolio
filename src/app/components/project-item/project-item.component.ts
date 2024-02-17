@@ -1,5 +1,5 @@
 import { NgClass, NgOptimizedImage } from '@angular/common';
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {
   MAT_DIALOG_DATA,
@@ -11,11 +11,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 
-type Teste = {
-  image: string
-  projectName: string
-  projectType: string
-}
+
 @Component({
   selector: 'app-project-item',
   standalone: true,
@@ -23,9 +19,11 @@ type Teste = {
   templateUrl: './project-item.component.html'
 })
 export class ProjectItemComponent {
-  @Input() image: string = "";
-  @Input() projectName: string = "";
-  @Input() projectType: string = "back-end";
+  @Input() avatar_url: string = ""
+  @Input() name: string = ""
+  @Input() language: string = ""
+  @Input() url: string = ""
+  @Input() description: string = ""
 
   constructor(public dialog: MatDialog) { }
 
@@ -33,9 +31,9 @@ export class ProjectItemComponent {
 
     this.dialog.open(DialogBox, {
       data: {
-        image: this.image,
-        projectName: this.projectName,
-        projectType: this.projectType,
+        image: this.avatar_url,
+        name: this.name,
+        language: this.language,
       }
     });
   }
@@ -43,24 +41,23 @@ export class ProjectItemComponent {
 
 
 @Component({
-  selector: 'dialog-elements-example-dialog',
+  selector: 'dialog-box',
   templateUrl: 'dialog-box.html',
   standalone: true,
   imports: [MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle, MatButtonModule, NgOptimizedImage]
 })
 export class DialogBox {
   image: string = "";
-  projectType: string = "";
-  projectName: string = "";
+  language: string = "";
+  name: string = "";
   constructor(
     public dialogRef: MatDialogRef<DialogBox>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     if (data) {
-      this.image = data.image;
-      this.projectType = data.projectType;
-      this.projectName = data.projectName;
+      this.image = data.avatar_url;
+      this.language = data.language;
+      this.name = data.name;
     }
   }
-
 }

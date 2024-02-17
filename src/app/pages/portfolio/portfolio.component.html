@@ -4,17 +4,15 @@
         <div class="grid sm:grid-cols-3 grid-cols-1 gap-3 max-w-5xl mx-auto">
             <app-project-item
                 class="sm:col-span-2 sm:row-span-2"
-                [image]="'assets/code.jpg'"
-                [projectName]="'Price Check'"
-                [projectType]="'front-end'"/>
-            <app-project-item
-                [image]="'assets/code.jpg'"
-                [projectName]="'Price Check'"
-                [projectType]="'front-end'"/>
-            <app-project-item
-                [image]="'assets/background.png'"
-                [projectName]="'Angula Portifólio'"
-                [projectType]="'web design'"/>
+                [avatar_url]="'assets/code.jpg'"
+                [name]="'Price Check'"
+                [language]="'front-end'"/>
+            @for (item of repositories; track $index) {
+                <app-project-item
+                    [avatar_url]="'assets/code.jpg'"
+                    [name]="item.name"
+                    [language]="item.language"/>
+            }
         </div>
     </div>
 </section>

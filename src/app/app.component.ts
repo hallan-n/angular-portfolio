@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './pages/about/about.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,4 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
     <router-outlet />
   `
 })
-export class AppComponent {
-  title = 'angular-portfolio';
-}
+export class AppComponent {}
