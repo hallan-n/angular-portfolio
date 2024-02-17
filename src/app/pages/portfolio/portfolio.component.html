@@ -1,0 +1,20 @@
+<section id="portfolio" class="h-screen">
+    <div class="pt-36 container mx-auto p-5">
+        <app-top-title [primaryTitle]="'PORTFOLIO'" [secondaryTitle]="'Confira alguns projetos realizados'" />
+        <div class="grid sm:grid-cols-3 grid-cols-1 gap-3 max-w-5xl mx-auto">
+            <app-project-item
+                class="sm:col-span-2 sm:row-span-2"
+                [image]="'assets/code.jpg'"
+                [projectName]="'Price Check'"
+                [projectType]="'front-end'"/>
+            <app-project-item
+                [image]="'assets/code.jpg'"
+                [projectName]="'Price Check'"
+                [projectType]="'front-end'"/>
+            <app-project-item
+                [image]="'assets/background.png'"
+                [projectName]="'Angula Portifólio'"
+                [projectType]="'web design'"/>
+        </div>
+    </div>
+</section>
