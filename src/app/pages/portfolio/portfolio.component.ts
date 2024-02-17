@@ -3,6 +3,7 @@ import { TopTitleComponent } from '../../components/top-title/top-title.componen
 import { ProjectItemComponent } from '../../components/project-item/project-item.component';
 import { GithubApiService } from '../../services/github-api.service'
 import { Repositorie } from '../../models/repositorie';
+import { PexelsApiService } from '../../services/pexels-api.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,14 +15,21 @@ export class PortfolioComponent implements OnInit{
   
   repositories: Repositorie[] = []
 
-  constructor(private service: GithubApiService) { 
+  constructor(private serviceGitHub: GithubApiService, private servicePexels: PexelsApiService) { 
   
   }
   ngOnInit(): void {
-    this.service.getRepos().subscribe(
+    this.serviceGitHub.getRepos().subscribe(
       {
         next: (res)=> this.repositories = res,
         error: (err) => console.log(err)
+      }
+    )
+
+    this.servicePexels.getRepos().subscribe(
+      {
+        next: (res)=> console.log(res),
+        error: (err)=> console.log(err),
       }
     )
    }
