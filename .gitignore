@@ -1,4 +1,4 @@
-/src/app/environments/*
+/src/app/environments/
 
 # Compiled output
 /dist
