@@ -2,6 +2,6 @@ export type Repositorie = {
     avatar_url: string,
     name: string,
     language: string,
-    url: string,
+    html_url: string,
     description: string
 }

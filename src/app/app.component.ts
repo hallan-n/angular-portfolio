@@ -14,9 +14,11 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
   template: `
     <app-header/>
     <app-home/>
-    <app-about/>
-    <app-overview/>
-    <app-portfolio/>
+    @defer (on idle){
+      <app-about/>
+      <app-overview/>
+    }
+      <app-portfolio/>    
     <router-outlet />
   `
 })

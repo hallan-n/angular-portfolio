@@ -1,18 +1,27 @@
 <section id="portfolio" class="h-screen">
     <div class="pt-36 container mx-auto p-5">
         <app-top-title [primaryTitle]="'PORTFOLIO'" [secondaryTitle]="'Confira alguns projetos realizados'" />
-        <div class="grid sm:grid-cols-3 grid-cols-1 gap-3 max-w-5xl mx-auto">
-            <app-project-item
-                class="sm:col-span-2 sm:row-span-2"
-                [avatar_url]="'assets/code.jpg'"
-                [name]="'Price Check'"
-                [language]="'front-end'"/>
-            @for (item of repositories; track $index) {
-                <app-project-item
-                    [avatar_url]="'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280'"
-                    [name]="item.name"
-                    [language]="item.language"/>
-            }
-        </div>
+        @defer(on immediate){
+            <div class="grid sm:grid-cols-3 grid-cols-1 gap-3 max-w-5xl mx-auto">
+                @for (item of repositories; track $index) {
+                    @if ($index == 0) {
+                        <app-project-item
+                            class="sm:col-span-2 sm:row-span-2"
+                            [avatar_url]="photos[$index].src.tiny"
+                            [name]="item.name"
+                            [language]="item.language"
+                            [html_url]="item.html_url"/>
+                    }@else {
+                        <app-project-item
+                            [avatar_url]="photos[$index].src.tiny"
+                            [name]="item.name"
+                            [language]="item.language"                            
+                            [html_url]="item.html_url"/>
+                    }
+                }
+            </div>
+        }@placeholder {
+            <mat-spinner class="mx-auto"></mat-spinner>
+        }
     </div>
 </section>

@@ -22,18 +22,18 @@ export class ProjectItemComponent {
   @Input() avatar_url: string = ""
   @Input() name: string = ""
   @Input() language: string = ""
-  @Input() url: string = ""
+  @Input() html_url: string = ""
   @Input() description: string = ""
 
   constructor(public dialog: MatDialog) { }
 
-  openDialog() {
-
+  openDialog() {    
     this.dialog.open(DialogBox, {
       data: {
         image: this.avatar_url,
         name: this.name,
         language: this.language,
+        html_url: this.html_url
       }
     });
   }
@@ -50,14 +50,16 @@ export class DialogBox {
   image: string = "";
   language: string = "";
   name: string = "";
+  html_url: string = "";
   constructor(
     public dialogRef: MatDialogRef<DialogBox>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     if (data) {
-      this.image = data.avatar_url;
+      this.image = data.image;
       this.language = data.language;
-      this.name = data.name;
+      this.name = data.name;      
+      this.html_url = data.html_url;
     }
   }
 }
