@@ -1,6 +1,6 @@
 <img class="object-cover w-full h-96" [ngSrc]="image" [height]="100" [width]="100">
 <div class="flex justify-between">
-    <h2 mat-dialog-title class="capitalize">{{ name.replaceAll("-", " ") }}</h2>
+    <h2 mat-dialog-title class="capitalize">{{ name | removeHyphens }}</h2>
     <p mat-dialog-title>{{ language }}</p>
 </div>
 <mat-dialog-content>{{ description }}</mat-dialog-content>

@@ -11,11 +11,13 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 
+import { RemoveHyphensPipe } from '../../pipes/remove-hyphens.pipe';
+
 
 @Component({
   selector: 'app-project-item',
   standalone: true,
-  imports: [NgOptimizedImage, NgClass],
+  imports: [NgOptimizedImage, NgClass, RemoveHyphensPipe],
   templateUrl: './project-item.component.html'
 })
 export class ProjectItemComponent {
@@ -45,7 +47,7 @@ export class ProjectItemComponent {
   selector: 'dialog-box',
   templateUrl: 'dialog-box.html',
   standalone: true,
-  imports: [MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle, MatButtonModule, NgOptimizedImage]
+  imports: [MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle, MatButtonModule, NgOptimizedImage, RemoveHyphensPipe]
 })
 export class DialogBox {
   image: string = "";
