@@ -1,8 +1,8 @@
 export type Image = {
     alt: string
     src: {
-        large: string
-        original: string
         tiny: string
+        original: string
+        large: string
     }
 }
