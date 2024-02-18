@@ -10,13 +10,15 @@
                             [avatar_url]="photos[$index].src.tiny"
                             [name]="item.name"
                             [language]="item.language"
-                            [html_url]="item.html_url"/>
+                            [html_url]="item.html_url"
+                            [description]="item.description"/>
                     }@else {
                         <app-project-item
                             [avatar_url]="photos[$index].src.tiny"
                             [name]="item.name"
                             [language]="item.language"                            
-                            [html_url]="item.html_url"/>
+                            [html_url]="item.html_url"
+                            [description]="item.description"/>
                     }
                 }
             </div>

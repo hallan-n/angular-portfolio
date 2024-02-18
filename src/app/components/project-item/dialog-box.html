@@ -1,9 +1,9 @@
 <img class="object-cover w-full h-96" [ngSrc]="image" [height]="100" [width]="100">
 <div class="flex justify-between">
-    <h2 mat-dialog-title>{{ name }}</h2>
-
+    <h2 mat-dialog-title class="capitalize">{{ name.replaceAll("-", " ") }}</h2>
+    <p mat-dialog-title>{{ language }}</p>
 </div>
-<mat-dialog-content>{{ language }}</mat-dialog-content>
+<mat-dialog-content>{{ description }}</mat-dialog-content>
 <mat-dialog-actions>
     <div class="w-full flex">
         <a [href]="html_url" target="_blank" class="w-full" mat-raised-button color="primary" mat-dialog-close>DETALHES</a>

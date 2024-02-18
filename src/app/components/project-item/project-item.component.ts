@@ -33,7 +33,8 @@ export class ProjectItemComponent {
         image: this.avatar_url,
         name: this.name,
         language: this.language,
-        html_url: this.html_url
+        html_url: this.html_url,
+        description: this.description
       }
     });
   }
@@ -51,15 +52,17 @@ export class DialogBox {
   language: string = "";
   name: string = "";
   html_url: string = "";
+  description: string = ""
   constructor(
     public dialogRef: MatDialogRef<DialogBox>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
-    if (data) {
-      this.image = data.image;
-      this.language = data.language;
-      this.name = data.name;      
-      this.html_url = data.html_url;
-    }
+    ) {
+      if (data) {
+        this.image = data.image;
+        this.language = data.language;
+        this.name = data.name;      
+        this.html_url = data.html_url;
+        this.description = data.description
+      }
   }
 }
