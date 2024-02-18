@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Repositorie } from '../models/repositorie';
+import { GITHUB_API_URL } from '../environments/environments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GithubApiService {
-  private API_URL: string = "https://api.github.com/users/hallan-n/repos"
+  private API_URL: string = GITHUB_API_URL
   private resp: Repositorie | any
 
   constructor(private http: HttpClient) { }
