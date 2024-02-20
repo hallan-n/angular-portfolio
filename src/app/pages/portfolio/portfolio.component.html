@@ -1,20 +1,20 @@
 <section id="portfolio" class="h-screen">
     <div class="pt-36 container mx-auto p-5">
         <app-top-title [primaryTitle]="'PORTFOLIO'" [secondaryTitle]="'Confira alguns projetos realizados'" />
-        @defer(on immediate){
+        @if(repositories.length > 0){
             <div class="grid sm:grid-cols-3 grid-cols-1 gap-3 max-w-5xl mx-auto">
                 @for (item of repositories; track $index) {
                     @if ($index == 0) {
                         <app-project-item
                             class="sm:col-span-2 sm:row-span-2"
-                            [avatar_url]="photos[$index].src.tiny"
+                            [avatar_url]="photos[$index].src.original"
                             [name]="item.name"
                             [language]="item.language"
                             [html_url]="item.html_url"
                             [description]="item.description"/>
                     }@else {
                         <app-project-item
-                            [avatar_url]="photos[$index].src.tiny"
+                            [avatar_url]="photos[$index].src.original"
                             [name]="item.name"
                             [language]="item.language"                            
                             [html_url]="item.html_url"
@@ -22,8 +22,7 @@
                     }
                 }
             </div>
-        }
-        @if ( repositories.length < 1) {
+        }@else{
             <mat-spinner class="mx-auto"></mat-spinner>
         }
     </div>
