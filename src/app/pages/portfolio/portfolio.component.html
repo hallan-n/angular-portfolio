@@ -23,7 +23,7 @@
                 }
             </div>
         }
-        @if (!!repositories) {
+        @if (repositories == null) {
             <mat-spinner class="mx-auto"></mat-spinner>
         }
     </div>

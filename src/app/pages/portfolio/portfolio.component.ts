@@ -6,8 +6,6 @@ import { GithubApiService } from '../../services/github-api.service'
 import { Repositorie } from '../../models/repositorie';
 import { PexelsApiService } from '../../services/pexels-api.service';
 import { Photo } from '../../models/photo';
-import { CacheService } from '../../services/cache.service';
-
 @Component({
   selector: 'app-portfolio',
   standalone: true,
@@ -22,48 +20,37 @@ export class PortfolioComponent implements OnInit {
 
   constructor(
     private serviceGitHub: GithubApiService,
-    private servicePexels: PexelsApiService,
-    private serviceCache: CacheService
+    private servicePexels: PexelsApiService
   ) {
 
   }
   ngOnInit(): void {
-    if (this.serviceCache.hasKey('photos')) {
-      this.photos = this.serviceCache.get('photos')
-    } else {
-      this.servicePexels.getRepos().subscribe(
-        {
-          next: (res) => {
-            res.photos.map(item => {
-              const photo: Photo = {
-                alt: item.alt,
-                src: {
-                  large: item.src.large,
-                  original: item.src.original,
-                  tiny: item.src.tiny
-                }
+    this.servicePexels.getRepos().subscribe(
+      {
+        next: (res) => {
+          res.photos.map(item => {
+            const photo: Photo = {
+              alt: item.alt,
+              src: {
+                large: item.src.large,
+                original: item.src.original,
+                tiny: item.src.tiny
               }
-              this.photos.push(photo)
-            })
-            this.serviceCache.set('photos', res)
-          },
-          error: (err) => console.log(err),
-        }
-      )
-    }
+            }
+            this.photos.push(photo)
+          })
+        },
+        error: (err) => console.log(err),
+      }
+    )
 
-    if (this.serviceCache.hasKey('respositories')) {
-      this.repositories = this.serviceCache.get('respositories')
-    } else {
-      this.serviceGitHub.getRepos().subscribe(
-        {
-          next: (res) => {
-            this.repositories = res
-            this.serviceCache.set('repositories', res)
-          },
-          error: (err) => console.log(err)
-        }
-      )
-    }
+
+    this.serviceGitHub.getRepos().subscribe(
+      {
+        next: (res) => this.repositories = res,
+        error: (err) => console.log(err)
+      }
+    )
+
   }
 }
