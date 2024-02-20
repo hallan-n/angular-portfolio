@@ -1,4 +1,4 @@
-<section id="portfolio" class="h-screen">
+<section id="portfolio" class="pb-36">
     <div class="pt-36 container mx-auto p-5">
         <app-top-title [primaryTitle]="'PORTFOLIO'" [secondaryTitle]="'Confira alguns projetos realizados'" />
         @if(repositories.length > 0){
@@ -14,7 +14,7 @@
                             [description]="item.description"/>
                     }@else {
                         <app-project-item
-                            [avatar_url]="photos[$index].src.original"
+                            [avatar_url]="photos[$index].src.tiny"
                             [name]="item.name"
                             [language]="item.language"                            
                             [html_url]="item.html_url"
