@@ -1,20 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Repositorie } from '../models/repositorie';
 import { GITHUB_API_URL } from '../environments/environments';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class GithubApiService {
   private API_URL: string = GITHUB_API_URL
-  private resp: Repositorie | any
+  private cache: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) { }
 
-  getRepos(): Observable<Repositorie[]>{
-    this.resp = this.http.get<Repositorie>(this.API_URL)
-    return this.resp
+  getRepos(): Observable<any> {
+    if (this.cache.getValue() != null) {
+      return new Observable<any>((observer)=>{
+        observer.next(this.cache.getValue())
+      })
+    }
+    
+    return this.http.get<Repositorie>(this.API_URL).pipe(
+      map((res)=>{
+        this.cache.next(res)
+        return this.cache.getValue()
+      })      
+    )
   }
 }
