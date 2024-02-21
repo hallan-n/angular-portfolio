@@ -9,7 +9,7 @@ import { GITHUB_API_URL } from '../environments/environments';
   providedIn: 'root'
 })
 export class GithubApiService {
-  private API_URL: string = GITHUB_API_URL
+  private API_URL: string = GITHUB_API_URL + "asdasd"
   private cache: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) { }
