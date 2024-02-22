@@ -6,12 +6,13 @@ import { AboutComponent } from './pages/about/about.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, OverviewComponent, PortfolioComponent, ServicesComponent],
+  imports: [RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, OverviewComponent, PortfolioComponent, ServicesComponent, ContactComponent],
   template: `
     <app-header/>
     <app-home/>
@@ -21,6 +22,7 @@ import { ServicesComponent } from './pages/services/services.component';
     }
       <app-portfolio/>
       <app-services/>
+      <app-contact/>
     <router-outlet />
   `
 })
