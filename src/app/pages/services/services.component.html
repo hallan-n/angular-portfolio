@@ -1,11 +1,22 @@
-<section id="services" class="bg-zinc-800 h-screen">
-    <div class="pt-36 container mx-auto p-5">
-        <app-top-title
-            [primaryTitle]="'SERVIÇOS'"
-            [secondaryTitle]="'Como posso te ajudar?'"
-            [isWhite]="true"/>
-        <div class="max-w-5xl mx-auto">
-            <app-service-carousel />
+<section id="services" class="bg-zinc-800">
+    <div class="pt-36 pb-16 container mx-auto p-5">
+        <app-top-title [primaryTitle]="'SERVIÇOS'" [secondaryTitle]="'Como posso te ajudar?'" [isWhite]="true" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20">
+            <app-service-item [iconName]="'globe_uk'" [itemName]="'Sistema integrado'"
+                [description]="'Envolve o desenvolvimento multiplataformas, onde dispositivos diferentes se comunicam e trabalham em sincronia através da internet'" />
+            <app-service-item [iconName]="'computer'" [itemName]="'Aplicação Web'"
+                [description]="'Desde uma simples landpage, sites pessoais ou comercial, até lojas virtuais e sistemas complexos para internet.'" />
+            <app-service-item [iconName]="'smartphone'" [itemName]="'Aplicações Mobile'"
+                [description]="'Aplicações híbridas ou nativas em multiplataformas para dispositivos móveis com Android ou IOS, disponibilizando em suas respectivas lojas e extraindo o seu instalador.'" />
+        
+            <app-service-item [iconName]="'desktop_windows'" [itemName]="'Aplicação Desktop'"
+                [description]="'Aplicações multiplataformas exclusivas, para sistemas operacionais Windows, Linux e Mac OS, onde o usuário necessita instalar o software em sua máquina.'" />
+            <app-service-item [iconName]="'draw'" [itemName]="'Design gráfico'"
+                [description]="'Essencial para o marketing Digital, uma arte gráfica pode fazer toda a diferença para o seu negócio. Panfletos, flyers, convites, banners, avatars, entre outras.'" />
+            <app-service-item [iconName]="'display_settings'" [itemName]="'UI/UX Design'"
+                [description]="'A experiência do usuário e a análise interativa com a aplicação é um diferencial para as aplicações modernas que focam soluções no ponto de vista do usuário.'" />
         </div>
+        
     </div>
+
 </section>
