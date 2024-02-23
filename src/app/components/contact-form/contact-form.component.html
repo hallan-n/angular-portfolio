@@ -1,31 +1,37 @@
-<form class="flex flex-col max-w-5xl mx-auto" action="">
+<form class="flex flex-col max-w-5xl mx-auto" [formGroup]="form" (ngSubmit)="handleSubmitForm()">
+
   <mat-form-field>
     <mat-label>Nome</mat-label>
-    <input matInput>
+    <input matInput formControlName="name">
   </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-    <mat-hint class="text-white">Errors appear instantly!</mat-hint>
-      @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-        <mat-error>Please enter a valid email address</mat-error>
-      }
-      @if (emailFormControl.hasError('required')) {
-        <mat-error>Email is <strong>required</strong></mat-error>
-      }
-  </mat-form-field>
-
 
   <mat-form-field>
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
   </mat-form-field>
+
+  <div class="flex gap-5">
+    <mat-form-field class="w-full">
+      <mat-label>Assunto</mat-label>
+      <input matInput formControlName="subject">
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Serviços</mat-label>
+      <mat-select formControlName="service">
+        <mat-option value="Sistema integrado">Sistema integrado</mat-option>
+        <mat-option value="Aplicação Web">Aplicação Web</mat-option>
+        <mat-option value="Aplicações Mobile">Aplicações Mobile</mat-option>
+        <mat-option value="Aplicação Desktop">Aplicação Desktop</mat-option>
+        <mat-option value="Design gráfico">Design gráfico</mat-option>
+        <mat-option value="UI/UX Design">UI/UX Design</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
   <mat-form-field>
     <mat-label>Textarea</mat-label>
-    <textarea class="max-h-52" matInput></textarea>
+    <textarea class="min-h-32" matInput formControlName="message"></textarea>
   </mat-form-field>
+  <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Enviar</button>
 </form>
