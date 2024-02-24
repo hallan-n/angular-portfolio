@@ -1,0 +1,5 @@
+export const GITHUB_API_URL: string = ""
+export const PEXELS_API_URL: string = ""
+export const PEXELS_API_AUTH: string = ""
+export const EMAIL_USER: string = ""
+export const EMAIL_PASSWORD: string = ""
