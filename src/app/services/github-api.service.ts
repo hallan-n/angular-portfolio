@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Repositorie } from '../models/repositorie';
-import { GITHUB_API_URL } from '../environments/environments';
+import { Environments as env } from '../environments/environments';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class GithubApiService {
-  private API_URL: string = GITHUB_API_URL + "asdasd"
+  private API_URL: string = env.GITHUB_API_URL
   private cache: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) { }

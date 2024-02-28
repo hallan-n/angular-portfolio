@@ -1,5 +1,7 @@
-export const GITHUB_API_URL: string = ""
-export const PEXELS_API_URL: string = ""
-export const PEXELS_API_AUTH: string = ""
-export const EMAIL_USER: string = ""
-export const EMAIL_PASSWORD: string = ""
+export enum Environments {
+    GITHUB_API_URL = "",
+    PEXELS_API_URL = "",
+    PEXELS_API_AUTH = "",
+    EMAIL_USER = "",
+    EMAIL_PASSWORD = ""
+}
