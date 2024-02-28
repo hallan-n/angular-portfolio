@@ -7,12 +7,13 @@ import { OverviewComponent } from './pages/overview/overview.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, OverviewComponent, PortfolioComponent, ServicesComponent, ContactComponent],
+  imports: [RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, OverviewComponent, PortfolioComponent, ServicesComponent, ContactComponent, FooterComponent],
   template: `
     <app-header/>
     <app-home/>
@@ -23,6 +24,7 @@ import { ContactComponent } from './pages/contact/contact.component';
       <app-portfolio/>
       <app-services/>
       <app-contact/>
+      <app-footer/>
     <router-outlet />
   `
 })
